@@ -21,7 +21,7 @@ rain = data["hourly"]["precipitation"]
 pressure = data["hourly"]["surface_pressure"]
 time = data["hourly"]["time"]
 river_list = floodData.get("daily", {}).get("river_discharge", [])
-river = river_list[0] 
+river = river_list[0] if river_list else none
 
 if rain and pressure:
     max_r = max(rain)
