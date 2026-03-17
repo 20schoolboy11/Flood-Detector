@@ -50,7 +50,7 @@ for test in tests:
     pressure = data["hourly"]["surface_pressure"]
     time = data["hourly"]["time"]
     river_list = floodData.get("daily").get("river_discharge")
-    river = river_list[0] 
+    river = river_list[0] if river_list else None
 
     if river is None:
         print("No river data available\n")
